@@ -16,6 +16,12 @@ const images = [
   },
 ];
 
-const listRef = document.getElementById('gallery');
+const createHTML = ({ url, alt } = {}) => {
+  return `<li>
+             <img src="${url}" alt="${alt}">
+          </li>`;
+};
 
-listRef.insertAdjacentHTML('afterbegin', '<h1>title</h1>');
+const markup = images.map(createHTML).join('');
+const listRef = document.getElementById('gallery');
+listRef.insertAdjacentHTML('afterbegin', markup);
