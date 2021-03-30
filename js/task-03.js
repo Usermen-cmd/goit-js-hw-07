@@ -16,7 +16,7 @@ const images = [
   },
 ];
 
-const createHTML = ({ url, alt }) => {
+const createHTML = ({ url, alt } = {}) => {
   return `<li>
              <img src="${url}" alt="${alt}">
           </li>`;
