@@ -1,6 +1,6 @@
 const inputRef = document.querySelector('#validation-input');
 
-const dataLength = inputRef.dataset.length;
+const dataLength = Number(inputRef.dataset.length);
 
 const onValidInput = event => {
   const lendthValue = event.currentTarget.value.length;
