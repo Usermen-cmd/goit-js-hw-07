@@ -9,11 +9,11 @@ const printCategoryQuantity = elementRef => {
 printCategoryQuantity(categoriesRef);
 
 const printTitlesCountElements = arrayRefs => {
-  for (let i = 0; i < arrayRefs.length; i += 1) {
-    let title = arrayRefs[i].firstElementChild.textContent;
-    let quntity = arrayRefs[i].lastElementChild.children.length;
-    console.log(`Категория: ${title}\nКоличество элементов: ${quntity}`);
-  }
+  arrayRefs.forEach(el =>
+    console.log(
+      `Категория: ${el.firstElementChild.textContent}\nКоличество элементов: ${el.lastElementChild.children.length}`,
+    ),
+  );
 };
 
 printTitlesCountElements(itemsRefs);
