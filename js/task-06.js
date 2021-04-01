@@ -1,10 +1,10 @@
 const inputRef = document.querySelector('#validation-input');
 
-const dataLength = Number(inputRef.dataset.length);
-
 const onValidInput = event => {
+  const dataLength = Number(inputRef.dataset.length);
   const lendthValue = event.currentTarget.value.length;
   const isValidLendth = dataLength <= lendthValue;
+
   if (isValidLendth) {
     inputRef.classList.add('valid');
     inputRef.classList.remove('invalid');
