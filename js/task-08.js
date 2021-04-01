@@ -5,28 +5,25 @@ const containerForBoxesRef = document.querySelector('#boxes');
 
 let currentBoxQuntity = 0;
 
-const getColor = () => {
-  return Math.floor(Math.random() * 255);
-};
-
 const createBoxes = amount => {
-  const array = [];
+  const arrayBoxes = [];
 
   for (let i = 1 + currentBoxQuntity; i <= amount + currentBoxQuntity; i += 1) {
-    const div = document.createElement('div');
-    const r = getColor();
-    const g = getColor();
-    const b = getColor();
-    const divStyles = `width: ${30 + i * 10}px; height: ${
-      30 + i * 10
-    }px; background-color: rgb(${r},${g},${b}); margin-top: 10px`;
+    const boxElem = document.createElement('div');
+    const rgbColors = Array.from('rgb').map(() => Math.floor(Math.random() * 255));
 
-    div.setAttribute('style', divStyles);
-    array.push(div);
+    const divStyles = `
+    width: ${30 + i * 10}px;
+    height: ${30 + i * 10}px;
+    background-color: rgb(${rgbColors});
+    margin-top: 10px`;
+
+    boxElem.setAttribute('style', divStyles);
+    arrayBoxes.push(boxElem);
   }
 
-  containerForBoxesRef.append(...array);
-  currentBoxQuntity += array.length;
+  containerForBoxesRef.append(...arrayBoxes);
+  currentBoxQuntity += arrayBoxes.length;
 };
 
 const onRenderBtnClick = () => {
