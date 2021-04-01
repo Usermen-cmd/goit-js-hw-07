@@ -17,9 +17,7 @@ const images = [
 ];
 
 const createHTML = ({ url, alt } = {}) => {
-  return `<li>
-             <img src="${url}" alt="${alt}">
-          </li>`;
+  return `<li><img src="${url}" alt="${alt}"></li>`;
 };
 
 const markup = images.map(createHTML).join('');
