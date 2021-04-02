@@ -1,17 +1,12 @@
 const inputRef = document.querySelector('#validation-input');
 
 const onValidInput = event => {
-  const dataLength = Number(inputRef.dataset.length);
-  const lendthValue = event.currentTarget.value.length;
-  const isValidLendth = dataLength <= lendthValue;
+  const isValidLendth = Number(inputRef.dataset.length) <= event.currentTarget.value.length;
+  const cls = isValidLendth ? 'valid' : 'invalid';
+  const inverseCls = isValidLendth ? 'invalid' : 'valid';
 
-  if (isValidLendth) {
-    inputRef.classList.add('valid');
-    inputRef.classList.remove('invalid');
-    return;
-  }
-  inputRef.classList.add('invalid');
-  inputRef.classList.remove('valid');
+  inputRef.classList.contains(inverseCls) ? inputRef.classList.remove(inverseCls) : 0;
+  inputRef.classList.add(cls);
 };
 
 inputRef.addEventListener('change', onValidInput);
