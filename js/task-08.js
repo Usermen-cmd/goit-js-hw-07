@@ -8,7 +8,7 @@ let currentBoxQuntity = 0;
 const createBoxes = amount => {
   const arrayBoxes = [];
 
-  for (let i = 0 + currentBoxQuntity; i <= amount - 1 + currentBoxQuntity; i += 1) {
+  for (let i = 0 + currentBoxQuntity; i < amount + currentBoxQuntity; i += 1) {
     const boxElem = document.createElement('div');
     const rgbColors = Array.from('rgb').map(() => Math.floor(Math.random() * 255));
 
@@ -20,6 +20,7 @@ const createBoxes = amount => {
 
     boxElem.setAttribute('style', divStyles);
     arrayBoxes.push(boxElem);
+    inputRef.value = '';
   }
 
   containerForBoxesRef.append(...arrayBoxes);
