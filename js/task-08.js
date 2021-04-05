@@ -5,8 +5,6 @@ const containerForBoxesRef = document.querySelector('#boxes');
 
 const maxValue = Number(inputRef.getAttribute('max'));
 
-console.log(maxValue);
-
 let currentBoxQuntity = 0;
 
 const createBoxes = amount => {
